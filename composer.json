@@ -1,0 +1,18 @@
+{
+    "name": "aurele/interface",
+    "description": "Interface based PHP project",
+    "type": "project",
+    "license": "ISC",
+    "autoload": {
+        "psr-4": {
+            "App\\Entity\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aurèle",
+            "email": "aurelien.plazzotta@tutanota.com"
+        }
+    ],
+    "require": {}
+}
