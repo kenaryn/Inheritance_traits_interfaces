@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Entity;
 
-class Book implements Printable;
+class Book implements PrintableInterface
 {
-  public function __construct(private string $title, private int releaseDate, private string isbn, private string resume)
+  public function __construct(private string $title, private int $releaseDate, private string $isbn, private string $resume)
   {
     $this->title = $title;
     $this->releaseDate = $releaseDate;
@@ -12,23 +14,17 @@ class Book implements Printable;
     $this->resume = $resume;
   }
 
-  public function __get(string $title): string
+  public function __get(string $property): string
   {
-    return $this->title;
+    if (property_exists($this, $property)) {
+      return $this->property;
+    } else {
+      throw new \Exception("'$property' property exists not!");
+    }
   }
 
-  public function __get(int $releaseDate): int
+  public function print(): string
   {
-    return $this->releaseDate;
-  }
-
-  public function __get(string $isbn): string
-  {
-    return $this->isbn;
-  }
-
-  public function __get(string $resume): string
-  {
-    return $this->resume;
+    return "Title: $this->title\nRelease date: $this->releaseDate\nISBN: $this->isbn\nResume: $this->resume\n";
   }
 }

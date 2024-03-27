@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-interface Printable
+interface PrintableInterface
 {
   public function print(): string;
 }
