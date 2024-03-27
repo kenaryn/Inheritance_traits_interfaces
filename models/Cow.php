@@ -2,8 +2,13 @@
 
 declare(strict_types=1);
 
-namespace \App\Entity\Cow;
+namespace App\Entity;
 
-class Cow
+use HerbivorousInterface;
+
+class Cow implements HerbivorousInterface
 {
+  public function crop(): string
+  {
+  }
 }

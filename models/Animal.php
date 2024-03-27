@@ -6,7 +6,7 @@ namespace App\Entity;
 
 abstract class Animal
 {
-  public function __construct(readonly protected string $name)
+  public function __construct(protected string $name)
   {
     $this->name = $name;
   }
